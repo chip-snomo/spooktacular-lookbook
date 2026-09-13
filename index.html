@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moonlit Spooktacular · Costume Look-Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0d0b12;
+    --panel:#171420;
+    --panel2:#1d1826;
+    --gold:#d4a24e;
+    --gold-soft:#c9a877;
+    --mist:#b9b3c8;
+    --mist-dim:#8d8799;
+    --ember:#c96a3b;
+    --purple:#8b7bb8;
+    --line:rgba(212,162,78,.28);
+    --line-soft:rgba(185,179,200,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:
+      radial-gradient(1200px 500px at 85% -5%, rgba(139,123,184,.16), transparent 60%),
+      radial-gradient(900px 420px at 8% 12%, rgba(212,162,78,.08), transparent 55%),
+      var(--ink);
+    color:var(--mist);
+    font-family:'Crimson Pro', Georgia, serif;
+    font-size:17px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:60px;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:0 18px}
+
+  header{padding:44px 0 10px;text-align:center;position:relative}
+  .moon{
+    width:74px;height:74px;border-radius:50%;
+    background:radial-gradient(circle at 32% 32%, #f5e7c8, #d9c9a3 58%, #b7a37c);
+    box-shadow:0 0 34px rgba(245,231,200,.35), inset -16px -8px 22px rgba(0,0,0,.45);
+    margin:0 auto 16px;
+  }
+  h1{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size:clamp(30px, 6.4vw, 44px);
+    letter-spacing:.06em;
+    color:#f2ead8;
+    line-height:1.12;
+  }
+  h1 .amp{color:var(--gold);font-style:italic}
+  .event-line{
+    margin-top:10px;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:17px;
+    color:var(--gold-soft);
+    letter-spacing:.04em;
+  }
+  .for-line{
+    margin-top:6px;font-size:14.5px;color:var(--mist-dim);
+    font-variant:small-caps;letter-spacing:.22em;
+  }
+
+  nav.chips{
+    position:sticky;top:0;z-index:50;
+    background:linear-gradient(180deg, rgba(13,11,18,.97), rgba(13,11,18,.88));
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line-soft);
+    padding:10px 0;
+    display:flex;gap:8px;justify-content:center;flex-wrap:wrap;
+  }
+  .chip{
+    font-family:'Cormorant Garamond', serif;
+    font-size:16px;letter-spacing:.03em;
+    color:var(--mist);
+    background:var(--panel);
+    border:1px solid var(--line-soft);
+    border-radius:999px;
+    padding:6px 16px;
+    cursor:pointer;
+    transition:all .18s ease;
+    white-space:nowrap;
+  }
+  .chip .num{color:var(--gold-soft);margin-right:5px}
+  .chip:hover{border-color:var(--line);color:#e8e2d4}
+  .chip.active{background:linear-gradient(180deg,#2a2136,#201a2c);border-color:var(--gold);color:#f2ead8;box-shadow:0 0 16px rgba(212,162,78,.15)}
+  .chip.active .num{color:var(--gold)}
+  .chip .star{color:var(--gold);margin-left:5px}
+
+  .panel-card{
+    margin:26px 0 8px;
+    background:linear-gradient(180deg, var(--panel2), var(--panel));
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 22px 20px;
+    box-shadow:0 18px 44px rgba(0,0,0,.45);
+  }
+  .panel-card.hidden{display:none}
+  .kicker{
+    text-align:center;font-variant:small-caps;letter-spacing:.3em;
+    font-size:13.5px;color:var(--ember);margin-bottom:6px;
+  }
+  .concept-title{
+    font-family:'Cormorant Garamond', serif;
+    text-align:center;font-weight:600;
+    font-size:clamp(24px,5.2vw,32px);
+    color:#f2ead8;letter-spacing:.03em;line-height:1.15;
+  }
+  .tagline{
+    text-align:center;font-style:italic;color:var(--gold-soft);
+    font-family:'Cormorant Garamond', serif;font-size:18px;margin-top:6px;
+  }
+  .why{
+    margin:18px auto 0;max-width:600px;
+    text-align:center;font-size:16.5px;color:var(--mist);
+  }
+  .why strong{color:#e8e2d4;font-weight:600}
+
+  .meters{
+    display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:18px 0 4px;
+  }
+  .meter{
+    background:rgba(255,255,255,.03);border:1px solid var(--line-soft);
+    border-radius:10px;padding:8px 13px;text-align:center;min-width:96px;
+  }
+  .meter .lab{font-size:12px;letter-spacing:.18em;font-variant:small-caps;color:var(--mist-dim)}
+  .meter .val{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--gold);margin-top:2px}
+
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+  @media(max-width:640px){.duo{grid-template-columns:1fr}}
+  .person{
+    background:rgba(0,0,0,.22);
+    border:1px solid var(--line-soft);
+    border-radius:12px;padding:18px 16px;
+  }
+  .person h3{
+    font-family:'Cormorant Garamond',serif;font-weight:600;
+    font-size:20px;color:var(--gold);letter-spacing:.04em;
+    border-bottom:1px dashed var(--line);padding-bottom:8px;margin-bottom:12px;
+  }
+  .person ul{list-style:none}
+  .person li{
+    padding:5px 0 5px 22px;position:relative;font-size:15.5px;color:var(--mist);
+  }
+  .person li::before{content:"☾";position:absolute;left:2px;color:var(--purple);font-size:12px;top:7px}
+  .person li em{color:#e8e2d4;font-style:normal;font-weight:600}
+  .shop-note{margin-top:12px;font-size:13.5px;color:var(--mist-dim);font-style:italic;border-top:1px dashed var(--line-soft);padding-top:10px}
+
+  .shoplist{margin-top:20px}
+  .shoplist h4{
+    font-variant:small-caps;letter-spacing:.24em;font-weight:600;font-size:14px;
+    color:var(--gold-soft);margin-bottom:10px;text-align:center;
+  }
+  .shoplist label{
+    display:flex;align-items:flex-start;gap:10px;
+    padding:8px 10px;border-radius:8px;cursor:pointer;
+    border:1px solid transparent;
+    font-size:15.5px;color:var(--mist);
+    transition:background .15s;
+  }
+  .shoplist label:hover{background:rgba(255,255,255,.03)}
+  .shoplist input{accent-color:var(--gold);margin-top:4px;flex:none}
+  .shoplist input:checked + span{color:var(--mist-dim);text-decoration:line-through;text-decoration-color:rgba(212,162,78,.5)}
+  .shoplist .price{color:var(--gold-soft);white-space:nowrap}
+  .budget-line{
+    text-align:center;margin-top:10px;font-size:14.5px;color:var(--mist-dim);font-style:italic;
+  }
+  .budget-line strong{color:var(--gold);font-style:normal}
+
+  .bit{
+    margin-top:18px;background:rgba(139,123,184,.09);
+    border:1px solid rgba(139,123,184,.3);border-radius:12px;padding:14px 16px;
+  }
+  .bit .bit-lab{font-variant:small-caps;letter-spacing:.24em;font-size:13px;color:var(--purple);margin-bottom:6px}
+  .bit p{font-style:italic;font-size:15.5px;color:var(--mist)}
+
+  .pickbar{display:flex;justify-content:center;margin-top:20px}
+  .pick-btn{
+    font-family:'Cormorant Garamond',serif;font-size:17px;letter-spacing:.05em;
+    background:none;border:1px solid var(--gold);color:var(--gold);
+    border-radius:999px;padding:8px 22px;cursor:pointer;transition:all .18s;
+  }
+  .pick-btn:hover{background:rgba(212,162,78,.12)}
+  .pick-btn.on{background:var(--gold);color:#1a1420;font-weight:600}
+
+  section.compare{margin-top:44px}
+  h2.section{
+    font-family:'Cormorant Garamond',serif;font-weight:600;text-align:center;
+    font-size:26px;color:#f2ead8;letter-spacing:.04em;margin-bottom:6px;
+  }
+  .section-sub{text-align:center;font-style:italic;color:var(--mist-dim);font-size:15px;margin-bottom:20px}
+  table{width:100%;border-collapse:collapse;font-size:15px}
+  th,td{padding:10px 8px;text-align:center;border-bottom:1px solid var(--line-soft)}
+  th{font-variant:small-caps;letter-spacing:.14em;color:var(--gold-soft);font-weight:600;font-size:13px}
+  td:first-child,th:first-child{text-align:left}
+  td .cname{font-family:'Cormorant Garamond',serif;color:#e8e2d4;font-size:16.5px}
+  td{color:var(--mist)}
+  tr{cursor:pointer;transition:background .15s}
+  tr:hover{background:rgba(255,255,255,.03)}
+  .tbl-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:6px}
+
+  .notes{margin-top:44px}
+  .note-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:640px){.note-grid{grid-template-columns:1fr}}
+  .note{
+    background:var(--panel);border:1px solid var(--line-soft);border-left:3px solid var(--gold);
+    border-radius:10px;padding:16px 16px;font-size:15.5px;
+  }
+  .note h4{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gold);margin-bottom:6px;font-weight:600}
+  .note p{color:var(--mist)}
+  .note em{color:#e8e2d4}
+
+  .hon{margin-top:40px;text-align:center}
+  .hon ul{list-style:none;margin-top:14px}
+  .hon li{
+    font-family:'Cormorant Garamond',serif;font-size:17.5px;color:var(--mist);
+    padding:7px 0;
+  }
+  .hon li strong{color:var(--gold-soft);font-weight:600}
+  .hon li span{font-style:italic;color:var(--mist-dim)}
+
+  .rsvp{
+    margin:36px auto 0;max-width:600px;text-align:center;
+    border:1px dashed var(--gold);border-radius:14px;padding:18px 20px;
+    background:rgba(212,162,78,.05);
+  }
+  .rsvp .date{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--gold)}
+  .rsvp p{font-size:15px;color:var(--mist);margin-top:4px}
+
+  footer{
+    margin-top:44px;text-align:center;font-size:13.5px;color:var(--mist-dim);
+    font-style:italic;padding-bottom:12px;
+  }
+  .phase{display:inline-block;margin:0 9px;color:var(--purple);font-size:11px;vertical-align:2px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="moon"></div>
+  <h1>Moonlit Spooktacular<br><span class="amp">&amp;</span> Wedding Costumes</h1>
+  <div class="event-line">Sarah &amp; Brian · Saturday, October 31, 2026 · Landmark Center, Saint Paul</div>
+  <div class="for-line">A look-book for Stacy &amp; Matthew · mysterious · otherworldly · spooky · magical</div>
+</header>
+
+<nav class="chips" id="chips"></nav>
+
+<div class="wrap">
+  <div id="panels"></div>
+
+  <section class="compare">
+    <h2 class="section">Side by Side</h2>
+    <div class="section-sub">tap a row to flip to that look</div>
+    <div class="tbl-scroll">
+      <table>
+        <thead>
+          <tr><th>Concept</th><th>Effort</th><th>Comfort</th><th>Cost</th><th>Closet reuse</th><th>Photo op</th><th>Uniqueness</th></tr>
+        </thead>
+        <tbody id="cmpBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="notes">
+    <h2 class="section">Practicalities</h2>
+    <div class="section-sub">the boring parts that make the fun parts work</div>
+    <div class="note-grid">
+      <div class="note">
+        <h4>Saint Paul in late October</h4>
+        <p>Evening temps typically sit in the <em>30s–40s°F</em>. Whatever you pick has to survive a coat over it and a coat check. Capes and gowns pack beautifully; hoops, wings, and tall hats don't. Plan the outer layer, not just the costume.</p>
+      </div>
+      <div class="note">
+        <h4>Three hours on your feet</h4>
+        <p>6–9pm, heavy hors d'oeuvres + cocktails = standing and mingling the whole time. <em>Comfortable shoes for Stacy, breathable layers for Matthew.</em> Gown hems should clear the floor by an inch — carrying a train through a cocktail hour is a chore, not a look.</p>
+      </div>
+      <div class="note">
+        <h4>Makeup that survives photos</h4>
+        <p>You will be photographed at a wedding. <em>Setting spray, matte where it matters, and a small touch-up kit</em> in Stacy's bag. Test the look once before the night — especially pale/ghost foundations, which read very differently under camera flash.</p>
+      </div>
+      <div class="note">
+        <h4>Buy early, not late October</h4>
+        <p>Halloween stock sells out and shipping gets dicey the last week of October. <em>Aim to have everything in hand by Oct 17.</em> Thrift runs are best done now while the seasonal racks are fully stocked.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="hon">
+    <h2 class="section">Honorable Mentions</h2>
+    <div class="section-sub">if none of the four feel right</div>
+    <ul>
+      <li><strong>Beetlejuice &amp; Lydia</strong> <span>— if you two want chaotic instead of elegant. Stripes, though: hot, loud, recognizable.</span></li>
+      <li><strong>Death &amp; the archaeologist's daughter</strong> <span>— Terry Pratchett's Death (black robe, scythe, BINKY the white horse jokes) with Ysabell. Deep-cut book humor; huge if the crowd knows Discworld, invisible if they don't.</span></li>
+      <li><strong>Victorian ghost bride &amp; groom</strong> <span>— leaning all the way into "we are also getting married, eternally." Most romantic option; white gown in late October is a bold move.</span></li>
+      <li><strong> Gomez solo</strong> <span>— if Matthew ever balks, Stacy-as-Morticia works beautifully alone and pairs with literally anyone's Wednesday.</span></li>
+    </ul>
+  </section>
+
+  <div class="rsvp">
+    <div class="date">🎃 RSVP by October 10, 2026</div>
+    <p>SpooktacularRSVP@gmail.com · say the word and I'll draft the email — costume headcount if Sarah asks, dietary notes, the works.</p>
+  </div>
+
+  <footer>Moonlit Spooktacular · costume look-book v1<span class="phase">🌑🌒🌓🌔</span>built for two</footer>
+</div>
+
+<script>
+const CONCEPTS = [
+  {
+    id:'gomez',
+    kicker:'Top Pick · the romantic bit',
+    title:'Gomez & Morticia Addams',
+    tagline:'"Tish — that's French."',
+    why:'It is a <strong>wedding</strong>, and you would arrive as fiction\'s most devoted married couple — the perfect bit. Genuinely elegant, instantly recognizable from across a ballroom, and comfortable enough to actually enjoy the party.',
+    meters:[['Effort','★★☆☆☆'],['Comfort','★★★★★'],['Photo op','★★★★★']],
+    stacy:{
+      name:'Stacy · Morticia',
+      items:[
+        '<em>Floor-length black knit gown</em> — fitted, stretch jersey (forgiving + no hem to carry). Amazon search: "long black gothic knit dress"',
+        '<em>Long straight black wig</em> — or own hair flat-ironed and sleeked',
+        '<em>Complexion:</em> pale foundation one shade down, smoky eye, deep crimson lip',
+        'Long black lace gloves or black talon nails',
+        'Silver statement ring + lace fan for the photos'
+      ],
+      note:'The wig does 70% of the work — a $25 "Morticia wig" from any costume shop is the single highest-impact purchase.'
+    },
+    matthew:{
+      name:'Matthew · Gomez',
+      items:[
+        '<em>Pinstripe suit</em> — his own charcoal/black suit works; pants could read "pajama stripe" for authenticity',
+        '<em>Thin pencil mustache</em> — spirit-gum fake or one careful brush of black face paint',
+        'Hair slicked back with generous product',
+        'White shirt, dark tie or cravat, pocket square',
+        'Cigar prop (unlit at the venue) + optional velvet smoking jacket'
+      ],
+      note:'Everything but the wig-equivalent is already in his closet. This is the cheapest believable costume on this page.'
+    },
+    shop:[
+      ['Morticia-style long black wig (Stacy)', 'approx $25'],
+      ['Floor-length black knit gown (if not thrifting one)', 'approx $45–70'],
+      ['Black lace gloves', 'approx $10'],
+      ['Spirit gum / paint for mustache', 'approx $6'],
+      ['Cigar prop', 'approx $8']
+    ],
+    budget:'Both-in under <strong>approx $100</strong> if the suit comes from the closet — the thrift route can halve it.',
+    bit:'Call each other "Cara mia" and "Mon sauvage" all night. If any music plays, tango at it with total commitment, regardless of tempo.'
+  },
+  {
+    id:'ghosts',
+    kicker:'Most on-theme · the story',
+    title:'The 1902 Ghosts',
+    tagline:'"We RSVP\'d to the building\'s original opening. We never left."',
+    why:'The Landmark Center opened in <strong>1902</strong> — so you arrive elegantly deceased from the building\'s own opening ceremony. It is unmatched conversation material, and the sepia vintage aesthetic mirrors the invitation\'s photo of the venue.',
+    meters:[['Effort','★★★★☆'],['Comfort','★★★☆☆'],['Photo op','★★★★★']],
+    stacy:{
+      name:'Stacy · the Mourning Lady',
+      items:[
+        '<em>Victorian/Edwardian black lace dress</em> — high neckline, long skirt; thrift: "black mourning dress" or any vintage black lace maxi',
+        'Cameo brooch (grandma\'s or approx $12 reproduction)',
+        'Birdcage veil or wide-brim black hat',
+        'Black lace gloves, button-up boots or plain heels',
+        'Pale matte base + light gray-washed eye + soft dusting of shimmer highlighter ("ghost glow")'
+      ],
+      note:'The veil reads "ghost" from 40 feet; without it you read "goth guest." Prioritize the veil.'
+    },
+    matthew:{
+      name:'Matthew · the Undertaker',
+      items:[
+        '<em>Black mourning suit</em> — his own black suit, ideally with a long overcoat or cape over it',
+        'Top hat (costume-grade is fine, approx $25)',
+        'Black cravat or ascot instead of a tie',
+        'Pocket watch on a chain — approx $15 costume prop',
+        'Pale powder + subtle gray under-eye shading; dust the hat brim and shoulders lightly so he looks "settled"'
+      ],
+      note:'A light dusting of translucent powder at the end of getting ready = instant "aged ghost" without costume makeup commitment.'
+    },
+    shop:[
+      ['Birdcage veil / black fascinator (Stacy)', 'approx $15–20'],
+      ['Cameo brooch', 'approx $12'],
+      ['Top hat (Matthew)', 'approx $25'],
+      ['Pocket watch prop', 'approx $15'],
+      ['Black cape or long overcoat (thrift first)', 'approx $30–50']
+    ],
+    budget:'Thrift-lucky: approx <strong>$90 both</strong>. Buying everything new: closer to $150. The thrift hunt is the effort.',
+    bit:'Whenever anyone asks about the venue: "We attended the opening in 1902. Marvelable building. We simply never checked out."'
+  },
+  {
+    id:'vampires',
+    kicker:'Least effort · maximum reuse',
+    title:'Vampire Count & Countess',
+    tagline:'"Black tie, but make it undead."',
+    why:'The one where the costume is <strong>mostly your existing closet</strong>: formalwear plus a cape plus fangs. The candlelit castle venue does the rest of the work for you. Clear and classic from across the room.',
+    meters:[['Effort','★★☆☆☆'],['Comfort','★★★★☆'],['Reuse','★★★★★']],
+    stacy:{
+      name:'Stacy · the Countess',
+      items:[
+        '<em>Black formal gown</em> — from her own closet',
+        'Dramatic deep-red or oxblood lip + one strong dark smokey eye',
+        'Choker + drop earrings she already owns',
+        'Moldable costume fangs (comfortable ones — practice talking once first)',
+        'Lace mantle or cape if she wants the silhouette; victory-roll updo or sleek pull-back'
+      ],
+      note:'Highest chance Stacy wears 80% of this outfit again. If only one thing is bought, make it the fangs — they carry the whole concept.'
+    },
+    matthew:{
+      name:'Matthew · the Count',
+      items:[
+        '<em>Black suit or tux</em> — his own',
+        '<em>Satin cape with high collar</em> — the one real purchase; approx $35 costume shop',
+        'Moldable fangs, hair combed flat and severe',
+        'Silver-topped cane (optional, approx $18) — doubles as a coat-check claim ticket in spirit',
+        'Undead pallor: one shade-down foundation, skip the gray unless ambitious'
+      ],
+      note:'The high collar is the whole costume. No cape = "guest at a wedding." Cape = "centuries-old aristocrat."'
+    },
+    shop:[
+      ['High-collar satin cape (Matthew)', 'approx $35'],
+      ['Moldable fangs × 2 pairs', 'approx $20–25'],
+      ['Lace mantle / capelet (Stacy, optional)', 'approx $25'],
+      ['Setting spray + touch-up kit', 'approx $12'],
+      ['Cane (optional)', 'approx $18']
+    ],
+    budget:'Cheapest believable option: approx <strong>$60–80 total</strong>, most of which is cape + fangs.',
+    bit:'Toast the couple "to a long and happy immortality." Hold eye contact two seconds longer than comfortable, then smile warmly.'
+  },
+  {
+    id:'luna',
+    kicker:'The wildcard · for whimsy over macabre',
+    title:'Luna Lovegood & Newt Scamander',
+    tagline:'"mysterious, otherworldly, magical — check, check, check."',
+    why:'The invite literally says <strong>magical</strong>. Luna and Newt are the most conversation-friendly, least-makeup, most-comfortable pick — and a wedding full of Harry Potter-adjacent millennials will adore you.',
+    meters:[['Effort','★★★☆☆'],['Comfort','★★★★★'],['Whimsy','★★★★★']],
+    stacy:{
+      name:'Stacy · Luna',
+      items:[
+        'Dirty-blonde <em>crimped wig</em> to the waist (approx $30) — or her own hair crimped + temporary silver-blonde spray',
+        '<em>Radish earrings</em> — approx $12 on Etsy, or DIY with air-dry clay',
+        'Layered quirky necklaces: corks, butterbeer-cork charm, a Dirigible plum hair clip',
+        'Soft lavender or pale-blue dress, tights, flat boots',
+        'Spectrespecs or wand as the carry prop; dreamy unfocused expression all night'
+      ],
+      note:'No face makeup beyond blush — the most skin-friendly option of the four. The earrings are the signature; everything else is suggestion.'
+    },
+    matthew:{
+      name:'Matthew · Newt',
+      items:[
+        '<em>Cobalt-blue wool coat</em> — thrift a navy/blue peacoat approx $30, or "Newt Scamander costume coat" approx $45',
+        'Waistcoat + bowtie + buttoned-up collared shirt',
+        '<em>Old leather satchel / briefcase</em> with a strap — any scuffed case reads as magical',
+        'Wand (approx $10), tousled hair, rolled sleeves',
+        'Optional: a tiny plush creature peeking from the case pocket'
+      ],
+      note:'The scuffed leather case is the costume\'s anchor — borrow any old briefcase before buying one.'
+    },
+    shop:[
+      ['Blonde crimped wig (Stacy)', 'approx $30'],
+      ['Radish earrings', 'approx $12'],
+      ['Blue coat (thrift first, then costume)', 'approx $30–45'],
+      ['Satchel / vintage briefcase', 'approx $0–25'],
+      ['Two wands', 'approx $20']
+    ],
+    budget:'Roughly <strong>approx $100–130</strong> both if thrifted well; the wig and coat are the big line items.',
+    bit:'Matthew handles the case like it contains something breathing. If anyone asks what\'s inside: "I would tell you, but you\'d worry."'
+  }
+];
+
+// ---------- render ----------
+const chips = document.getElementById('chips');
+const panels = document.getElementById('panels');
+const cmpBody = document.getElementById('cmpBody');
+
+function star(id){ return localStorage.getItem('spook-pick')===id; }
+
+function render(){
+  chips.innerHTML = CONCEPTS.map((c,i)=>
+    `<button class="chip${i===0?' active':''}" data-i="${i}">
+      <span class="num">${i+1}</span>${c.title.split(' &')[0]}${star(c.id)?'<span class="star">★</span>':''}
+     </button>`).join('');
+
+  panels.innerHTML = CONCEPTS.map((c,i)=>`
+  <div class="panel-card${i===0?'':' hidden'}" id="p-${c.id}">
+    <div class="kicker">${c.kicker}</div>
+    <div class="concept-title">${c.title}</div>
+    <div class="tagline">${c.tagline}</div>
+    <div class="why">${c.why}</div>
+    <div class="meters">${c.meters.map(m=>`<div class="meter"><div class="lab">${m[0]}</div><div class="val">${m[1]}</div></div>`).join('')}</div>
+    <div class="duo">
+      ${personCard(c.stacy)}
+      ${personCard(c.matthew)}
+    </div>
+    <div class="shoplist">
+      <h4>Shopping List · tap to check off</h4>
+      ${c.shop.map(s=>`
+        <label><input type="checkbox" data-k="spook-${c.id}-${s[0]}"><span>${s[0]}</span><span class="price">${s[1]}</span></label>
+      `).join('')}
+      <div class="budget-line">${c.budget}</div>
+    </div>
+    <div class="bit"><div class="bit-lab">The Bit</div><p>${c.bit}</div></div>
+    <div class="pickbar"><button class="pick-btn${star(c.id)?' on':''}" data-pick="${c.id}">${star(c.id)?'★ our pick':'mark as our pick'}</button></div>
+  </div>`).join('');
+
+  cmpBody.innerHTML = CONCEPTS.map((c,i)=>`
+    <tr data-i="${i}">
+      <td><span class="cname">${c.title}</span></td>
+      <td>${c.meters[0][1]}</td>
+      <td>${c.meters[1][1]}</td>
+      <td>${c.budget.match(/approx <strong>([^<]+)<\/strong>/) ? c.budget.match(/approx <strong>([^<]+)<\/strong>/)[1] : '—'}</td>
+      <td>${c.id==='vampires'?'★★★★★':c.id==='gomez'?'★★★★☆':c.id==='luna'?'★★☆☆☆':'★★☆☆☆'}</td>
+      <td>${c.meters[2][1]}</td>
+      <td>${c.id==='gomez'?'★★☆☆☆':c.id==='ghosts'?'★★★★★':c.id==='vampires'?'★★☆☆☆':'★★★★☆'}</td>
+    </tr>`).join('');
+
+  restoreChecks();
+}
+
+function personCard(p){
+  return `<div class="person">
+    <h3>${p.name}</h3>
+    <ul>${p.items.map(it=>`<li>${it}</li>`).join('')}</ul>
+    <div class="shop-note">${p.note}</div>
+  </div>`;
+}
+
+// ---------- interactions ----------
+function show(i){
+  document.querySelectorAll('.panel-card').forEach((p,j)=>p.classList.toggle('hidden', j!==i));
+  document.querySelectorAll('.chip').forEach((c,j)=>c.classList.toggle('active', j===i));
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+document.addEventListener('click', e=>{
+  const chip = e.target.closest('.chip');
+  if(chip){ show(+chip.dataset.i); return; }
+  const tr = e.target.closest('tr[data-i]');
+  if(tr){ show(+tr.dataset.i); return; }
+  const pick = e.target.closest('.pick-btn');
+  if(pick){
+    const id = pick.dataset.pick;
+    if(localStorage.getItem('spook-pick')===id){ localStorage.removeItem('spook-pick'); }
+    else{ localStorage.setItem('spook-pick', id); }
+    render(); show(CONCEPTS.findIndex(c=>c.id===id));
+  }
+});
+
+document.addEventListener('change', e=>{
+  if(e.target.matches('.shoplist input')){
+    localStorage.setItem(e.target.dataset.k, e.target.checked?'1':'0');
+  }
+});
+
+function restoreChecks(){
+  document.querySelectorAll('.shoplist input').forEach(inp=>{
+    inp.checked = localStorage.getItem(inp.dataset.k)==='1';
+  });
+}
+
+render();
+</script>
+</body>
+</html>
